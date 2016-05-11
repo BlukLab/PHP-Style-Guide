@@ -11,7 +11,7 @@ El siguiente contenido describe la codificación para la contribución al desarr
   * [Nombre de archivos](#nombre-de-archivos)
   * [Nombre de clases y métodos](#nombre-de-clases-metodos)
   * [Nombre de variables](#nombre-de-variables)
-  * [Comentar](#comentar)
+  * [Comentarios](#comentarios)
 
 ## <a name='formato-de-archivos'>Formato de Archivo</a>
 Los archivos deben ser guardados con codificación Unicode (UTF-8). BOM *no* debe ser utilizado. A diferencia de UTF-16 y UTF-32, no hay ningín orden de bytes para indicar en un archivo codificado en UTF-8. BOM puede tener un efecto negativo en el envío de la salida PHP, evitando a la aplicación la posibilidad de establecer sus propias cabeceras. Los fin de línea UNIX deben utilizarse (LF).
@@ -111,4 +111,60 @@ $str
 $buffer
 $group_id
 $last_city
+```
+
+## <a name="#comentarios">Comentarios</a>
+
+En general, el código debe ser comentado prolíficamente. No sólo ayuda a describir el flujo y la intención del código para los programadores menos experimentados, pero puede resultar muy valioso volver a la línea de su propio código de hace meses. No hay un formato requerido par los comentarios, pero se recomieda lo siguiente:
+
+Estilo DocBlock, antes de la declaración de clases, métodos y propiedades, para que puedar ser captados por los IDEs.
+
+```php
+/**
+ * Super Class
+ *
+ * @package     Package Name
+ * @subpackage  Subpackage
+ * @category    Category
+ * @author      Author Name
+ * @link        http://example.com
+ */
+class Super_class {
+```
+
+```php
+/**
+ * Encodes string for use in XML
+ *
+ * @param       string  $str    Input string
+ * @return      string
+ */
+function xml_encode($str)
+```
+
+```php
+/**
+ * Data for class manipulation
+ *
+ * @var array
+ */
+public $data = array();
+```
+
+En los comentarios de una sola línea, deje una línea en blanco entre grandes bloques de comentarios
+
+```php
+//Divide la cadena en saltos de línea
+$parts = explode("\n", $str);
+
+//Un comentario más largo que necesita para dar más detalles sobre lo que está
+//ocurriendo y por qué pueden utilizar varios comentarios de una sola línea. Trate
+//de mantener la anchura razonable, alrededor de 70 caracteres es el más fácil de
+//leer. No dude en vincular a los recursos externos permanentes que puedan
+//proporcionar mayor detalle:
+//
+// http://example.com/information_about_something/in_particular/
+
+$parts = $this->foo($parts);
+
 ```
