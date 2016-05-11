@@ -11,6 +11,7 @@ El siguiente contenido describe la codificación para la contribución al desarr
   * [Nombre de archivos](#nombre-de-archivos)
   * [Nombre de clases y métodos](#nombre-de-clases-metodos)
   * [Nombre de variables](#nombre-de-variables)
+  * [Comentar](#comentar)
 
 ## <a name='formato-de-archivos'>Formato de Archivo</a>
 Los archivos deben ser guardados con codificación Unicode (UTF-8). BOM *no* debe ser utilizado. A diferencia de UTF-16 y UTF-32, no hay ningín orden de bytes para indicar en un archivo codificado en UTF-8. BOM puede tener un efecto negativo en el envío de la salida PHP, evitando a la aplicación la posibilidad de establecer sus propias cabeceras. Los fin de línea UNIX deben utilizarse (LF).
@@ -93,6 +94,8 @@ function get_file_properties()  // descriptiva, separada con guión bajo, y toda
 
 La guía para nombrar varaibles son muy similares a los utilizados para los métodos. Las variables deben contener sólo letras minúsculas, usando guión bajo (underscore) como separador, y deben ser nombres razonables que indiquen su propósito y contenido. Las variables muy cortas que no son palabras solo deben utilizarse en iteradores como en los bucles `for()`.
 
+#### INCORRECTO:
+
 ```php
 $j = 'foo';             // variables de una sola letra solo debe utilizarse en bucles for()
 $Str                    // contiene letras mayúsculas
@@ -100,6 +103,7 @@ $bufferedText           // utiliza CamelCase, y podría acortarse sin perder sig
 $groupid                // varias palabras, necesitan seperarse con guión bajo
 $name_of_last_city_used // demasiado largo
 ```
+#### CORRECTO:
 
 ```php
 for ($j = 0; $j < 10; $j++)
