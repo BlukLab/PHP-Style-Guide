@@ -78,14 +78,33 @@ Los métodos de las clases deben ser completamente en minúsculas y se nombran p
 
 #### INCORRECTO:
 ```php
-function fileproperties()               // not descriptive and needs underscore separator
-function fileProperties()               // not descriptive and uses CamelCase
-function getfileproperties()            // Better!  But still missing underscore separator
-function getFileProperties()            // uses CamelCase
-function get_the_file_properties_from_the_file()        // wordy
+function fileproperties()               // no es descriptiva y es necesario seperar con guión bajo (underscore)
+function fileProperties()               // no es descriptiva y utiliza CamelCase
+function getfileproperties()            // Mejor!  Pero todavía falta separa con guión bajo
+function getFileProperties()            // utiliza CamelCase
+function get_the_file_properties_from_the_file()        // Muchas palabras
 ```
 
 #### CORRECTO:
 ```php
-function get_file_properties()  // descriptive, underscore separator, and all lowercase letters
+function get_file_properties()  // descriptiva, separada con guión bajo, y todas las letras en minúscula
+```
+## <a name="#nombre-de-variables">Nombre de variables</a>
+
+La guía para nombrar varaibles son muy similares a los utilizados para los métodos. Las variables deben contener sólo letras minúsculas, usando guión bajo (underscore) como separador, y deben ser nombres razonables que indiquen su propósito y contenido. Las variables muy cortas que no son palabras solo deben utilizarse en iteradores como en los bucles `for()`.
+
+```php
+$j = 'foo';             // variables de una sola letra solo debe utilizarse en bucles for()
+$Str                    // contiene letras mayúsculas
+$bufferedText           // utiliza CamelCase, y podría acortarse sin perder significado semántico
+$groupid                // varias palabras, necesitan seperarse con guión bajo
+$name_of_last_city_used // demasiado largo
+```
+
+```php
+for ($j = 0; $j < 10; $j++)
+$str
+$buffer
+$group_id
+$last_city
 ```
