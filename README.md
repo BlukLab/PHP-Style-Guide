@@ -12,6 +12,7 @@ El siguiente contenido describe la codificación para la contribución al desarr
   * [Nombre de clases y métodos](#nombre-de-clases-metodos)
   * [Nombre de variables](#nombre-de-variables)
   * [Comentarios](#comentarios)
+  * [Constantes](#constantes)
 
 ## <a name='formato-de-archivos'>Formato de Archivo</a>
 Los archivos deben ser guardados con codificación Unicode (UTF-8). BOM *no* debe ser utilizado. A diferencia de UTF-16 y UTF-32, no hay ningín orden de bytes para indicar en un archivo codificado en UTF-8. BOM puede tener un efecto negativo en el envío de la salida PHP, evitando a la aplicación la posibilidad de establecer sus propias cabeceras. Los fin de línea UNIX deben utilizarse (LF).
@@ -166,5 +167,26 @@ $parts = explode("\n", $str);
 // http://example.com/information_about_something/in_particular/
 
 $parts = $this->foo($parts);
+```
 
+## <a name="#constantes">Constantes</a>
+
+Las constantes siguemn el mismo patrón que las variablesm, con la condición de que las constantes deben ser siempre completamente en mayúsculas. *Siempre prefiera utilizar las contantes de Codeigniter cuando sea apropiado, es decir, SLASH, LD, RD, PATH_CACHE, etc.*
+
+#### INCORRECTO:
+
+```php
+myConstant      // falta separar con guión bajo y estar completamente en mayúsculas
+N               // no constantes de una sola letra
+S_C_VER         // no descriptiva
+$str = str_replace('{foo}', 'bar', $str);       // debe utilizar constantes LD y RD
+```
+
+#### CORRECTO:
+
+```php
+MY_CONSTANT
+NEWLINE
+SUPER_CLASS_VERSION
+$str = str_replace(LD.'foo'.RD, 'bar', $str);
 ```
